@@ -1,19 +1,18 @@
 const apiKey="ce0677e74c5845fa854d3db00f5ea349";
 const BlogContainer = document.getElementById('blogContainer');
-
 const SearchField = document.getElementById('searchInput');
 const SearchButton = document.getElementById('searchBtn');
 
 async function fetchRandomNews(){
     try{
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=in&pagesize=10&apiKey=${apiKey}`;
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&pagesize=10&apiKey=${apiKey}`;
         const respones = await fetch(apiUrl);
         const data = await respones.json();
         return data.articles;
     }
     catch(error){
         console.error("Error Fetching The Random News",error);
-      return[];
+      return[]
     }
 }
 
